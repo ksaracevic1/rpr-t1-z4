@@ -10,6 +10,7 @@ public class Program {
 
         // Testiranje studenta
 
+
         Student s = new Student ("k", "s", 22);
         System.out.println(s);
         //testiranje getera
@@ -27,7 +28,16 @@ public class Program {
         p.upisi(s1);
         System.out.println(p);
         p.ispisi(s1);
+        p.toString();
         System.out.println(p);
+        p.toString();
+
+
+
+
+
+
+
 
     }
 

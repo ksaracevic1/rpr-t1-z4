@@ -20,13 +20,15 @@ public class Predmet {
     }
 
     boolean equals(Predmet p) {
-        for (int i = 0; i < broj; i++) {
-            if (p.niz[i] != this.niz[i])
+        for (int i = 0; i < koliko; i++) {
+            if (!p.niz[i].equals(this.niz[i]))
                 return false;
         }
         if (p.koliko != this.koliko) return false;
         if (p.naziv != this.naziv) return false;
         if (p.sifra != this.sifra) return false;
+
+
         return p.broj == this.broj;
     }
 
@@ -69,13 +71,16 @@ public class Predmet {
     }
 
     public String toString() {
-
+        String pomocni = "";
         int brojac = 0;
         for (Student s1 : niz) {
-            System.out.println(brojac + 1 + " ");
-            System.out.println(s1);
+            pomocni+= brojac + 1 + ". " + s1;
             brojac++;
+            if (brojac == koliko) break;
+            pomocni+="\n";
+
+
         }
-        return " " ;
+        return pomocni.toString();
     }
 }

@@ -16,19 +16,12 @@ public Student (String ime, String prezime, int broj) {
     public String toString() {
         return  getPrezime() + " " + getIme() + " (" + getBroj() + ")";
     }
-
-
     boolean equals(Student p){
         if (p.ime != this.ime)return false;
         if (p.prezime != this.prezime)return false;
         if (p.broj != this.broj)return false;
         return true;
     }
-
-
-
-
-
     public static void main(String[] args) {
 	// write your code here
     }
