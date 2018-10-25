@@ -15,7 +15,7 @@ public class Predmet {
     public void ispisi(Student s) {
         boolean x= false;
         for (int i = 0; i < koliko; i++) {
-            if (niz[i].equals(s)) {
+            if (niz[i] == s) {
                 x = true;
                 for (int j = i; j < broj - 1; j++) {
                     niz[j] = niz[j + 1];
