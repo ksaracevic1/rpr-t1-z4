@@ -15,14 +15,15 @@ public class Predmet {
     public void ispisi(Student s) {
         boolean x= false;
         for (int i = 0; i < koliko; i++) {
-            if (niz[i] == s) {
+            if (s.equals(niz[i]) ){
                 x = true;
                 for (int j = i; j < broj - 1; j++) {
                     niz[j] = niz[j + 1];
                 }
+                koliko--;
             }
         }
-        koliko--;
+
         if (x==false )  throw new IllegalArgumentException ("Proslijedjen student koji vec ispisan");
     }
 
