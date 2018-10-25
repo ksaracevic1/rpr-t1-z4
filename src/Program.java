@@ -1,4 +1,40 @@
+import java.util.Scanner;
+
 public class Program {
+    Predmet [] niz;
+    int koliko;
+    public Program () {
+        niz= new Predmet[100];
+        koliko = 0;
+    }
+    public void upisi(Predmet p) {
+        for (int i=0; i< koliko; i++)
+        {
+            if (p.equals(niz[i]) ) throw new IllegalArgumentException ("Proslijedjen predmet koji ne postoji!");
+        }
+
+        niz[koliko++] = p;
+    }
+
+    public void ispisi(Predmet s) {
+        boolean x= false;
+        for (int i = 0; i < koliko; i++) {
+            if (niz[i].equals(s)) {
+                x = true;
+                for (int j = i; j < 99; j++) {
+                    niz[j] = niz[j + 1];
+                }
+            }
+        }
+        koliko--;
+        if (x==false )  throw new IllegalArgumentException ("Proslijedjen predmet koji ne postoji!");
+    }
+
+
+
+
+
+
     public static void main(String[] args) {
         // kreiranje novog predmeta,
         // novog studenta,
@@ -9,6 +45,21 @@ public class Program {
         // te ispis spiska studenata na predmetu.
 
         // Testiranje studenta
+        System.out.println("Odabreite opcije:" +
+                "1. Kreiranje novog predmeta" +
+                "2. Kreiranje novog studenta" +
+                "3. Upis studenta na predmet" +
+                "4. Ispis studenta za predmet" +
+                "5. Brisanje studenta" +
+                "6. Brisanje predmeta" +
+                "7. Ipis spiska studenata na predmetu"
+        );
+
+        Scanner ulaz = new Scanner(System.in);
+        int n = ulaz.nextInt();
+        if (n == 1) {
+
+        }
 
 
         Student s = new Student ("k", "s", 22);

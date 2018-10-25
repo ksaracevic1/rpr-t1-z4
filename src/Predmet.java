@@ -2,21 +2,28 @@ public class Predmet {
     private Student[] niz;
     private int koliko;
 
+
     public void upisi(Student s) {
+        for (int i=0; i< koliko; i++)
+        {
+            if (s.equals(niz[i]) ) throw new IllegalArgumentException ("Proslijedjen student koji vec postoji!");
+            }
+
         niz[koliko++] = s;
     }
 
     public void ispisi(Student s) {
+        boolean x= false;
         for (int i = 0; i < koliko; i++) {
-            if (niz[i] == s) {
+            if (niz[i].equals(s)) {
+                x = true;
                 for (int j = i; j < broj - 1; j++) {
                     niz[j] = niz[j + 1];
                 }
-
             }
-
         }
         koliko--;
+        if (x==false )  throw new IllegalArgumentException ("Proslijedjen student koji vec ispisan");
     }
 
     boolean equals(Predmet p) {

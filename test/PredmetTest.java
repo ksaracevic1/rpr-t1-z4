@@ -17,6 +17,31 @@ class PredmetTest {
     }
 
     @Test
+    void ispisi() {
+        Student s = new Student ("k1", "k1", 22);
+        Student s1 = new Student ("k2", "k2", 23);
+        Student s2 = new Student ("k3", "k3", 24);
+        Student[] niz ={ s, s1};
+        Predmet p = new Predmet ( niz, "mlti", 11, 20 );
+        assertThrows(IllegalArgumentException.class, () -> {   p.ispisi(s2);});
+    }
+
+
+
+    @Test
+    void upisiVecPostoji() {
+        Student s = new Student ("k1", "k1", 22);
+        Student s1 = new Student ("k2", "k2", 23);
+        Student s2 = new Student ("k3", "k3", 24);
+        Student[] niz ={ s, s1};
+        Predmet p = new Predmet ( niz, "mlti", 11, 20 );
+        assertThrows(IllegalArgumentException.class, () -> {   p.upisi(s);});
+    }
+
+
+
+
+    @Test
     void testKonstruktora() {
         Student s = new Student ("k", "s", 22);
         Student s1 = new Student ("k1", "k2", 23);
